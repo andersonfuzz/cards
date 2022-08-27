@@ -1,0 +1,33 @@
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+    position: relative;
+}
+.grid{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    position: absolute;
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+}
+
+.card{
+    width: 100%;
+    aspect-ratio: 3/4;
+    position: relative;
+    background-color: brown;
+}
+.face{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+.front{
+    background-color: #000;
+}
+.back{
+    background-color: darkgreen;
+}
