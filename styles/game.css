@@ -3,14 +3,52 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background-image: url('../img/back.png');
+    background-size: cover;
+    background-position: center;
+    position: relative;
 }
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     width: 100%;
     height: 100%;
     max-width: 620px;
-    max-height: 620px;
-    background-color: #000;
+    max-height: 550px;
+    box-shadow: 1px 1px 100px #000;
+    position: absolute;
+}
+
+.card {
+    border: 1px solid #000;
+    width: 100%;
+    aspect-ratio: 3/4;
+    border-radius: 10px;
+    box-shadow: 1px 1px 100px #000;
+    position: relative;
+
+}
+
+.face {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+    position: absolute;
+}
+
+.front {
+
+    background-color: darkcyan;
+}
+
+.back {
+    background-image: url('../img/lander.png');
+}
+
+.card:hover {
+    cursor: pointer;
+    box-shadow: none;
 }
