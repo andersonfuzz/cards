@@ -48,13 +48,16 @@ body {
 }
 
 .back {
-    background-image: url('../img/back.jpg');
+    background-image: url('../img/lander.png');
     backface-visibility: hidden;
 }
 
 .card:hover {
     cursor: pointer;
     box-shadow: none;
-    transform: rotateY(-180deg);
     
+}
+.revelCard{
+    transform: rotateY(-180deg);
+
 }
