@@ -1,6 +1,7 @@
 const grid = document.querySelector(".grid");
 
-const baralho = [
+//Personagens
+const characters = [
   "00",
   "01",
   "02",
@@ -14,13 +15,15 @@ const baralho = [
   "10",
   "11",
 ];
+//Dobrando cartas com operador 'spread
+const doubleCharacters=[ ...characters,...characters]
 //Criando carta
-function newCard(personagen) {
-  const card = newElement("div", "card");
-  const front = newElement("div", "face front");
-  const back = newElement("div", "face back");
+function createCard(character) {
+  const card = createElement("div", "card");
+  const front = createElement("div", "face front");
+  const back = createElement("div", "face back");
 
-        front.style.backgroundImage=`url('../img${personagen}.jpg')`
+        front.style.backgroundImage=`url(../img/${character}.jpg)` 
 
   card.appendChild(front);
   card.appendChild(back);
@@ -29,20 +32,27 @@ function newCard(personagen) {
 }
 
 //Criando elemento e adicionando classes
-function newElement(tag, $class) {
+function createElement(tag, $class) {
   const element = document.createElement(tag);
   element.classList = $class;
   return element;
 }
-
-function tabuleiro() {
-  baralho.forEach(() => {
-    const carta = newCard(baralho);
-    grid.appendChild(carta);
-  });
+//Tabuleiro
+/*function board() {
+   for(let i=0;i<doubleCharacters.length;i++){
+        const avatar= createCard(doubleCharacters[i])
+        grid.appendChild(avatar)
+   }
+}*/
+//Tabuleiro
+function board(){
+    doubleCharacters.forEach((item)=>{
+        const avatar=createCard(item)
+        grid.appendChild(avatar)
+    })
 }
 
 //Carregando jogo
 window.onload = () => {
-  tabuleiro();
+  board();
 };
