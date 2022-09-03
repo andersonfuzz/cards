@@ -1,23 +1,48 @@
-const grid=document.querySelector('.grid')
+const grid = document.querySelector(".grid");
 
-function newCard(){
-    const card=newElement('div','card')
-    const front=newElement('div','face front')
-    const back=newElement('div','face back')
+const baralho = [
+  "00",
+  "01",
+  "02",
+  "03",
+  "04",
+  "05",
+  "06",
+  "07",
+  "08",
+  "09",
+  "10",
+  "11",
+];
+//Criando carta
+function newCard(personagen) {
+  const card = newElement("div", "card");
+  const front = newElement("div", "face front");
+  const back = newElement("div", "face back");
 
-    card.appendChild(front)
-    card.appendChild(back)
+        front.style.backgroundImage=`url('../img${personagen}.jpg')`
 
-    grid.appendChild(card)
+  card.appendChild(front);
+  card.appendChild(back);
+
+  return card;
 }
-function newElement(tag,$class){
-    const element=document.createElement(tag)
-          element.classList($class)
-    return element
+
+//Criando elemento e adicionando classes
+function newElement(tag, $class) {
+  const element = document.createElement(tag);
+  element.classList = $class;
+  return element;
 }
 
-
-window.onload=()=>{
-    newCard()
-    newCard()
+function tabuleiro() {
+  baralho.forEach(() => {
+    const carta = newCard(baralho);
+    grid.appendChild(carta);
+  });
 }
+
+//Carregando jogo
+window.onload = () => {
+  tabuleiro();
+};

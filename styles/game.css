@@ -3,7 +3,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: url('../img/back.png');
+    background-color: #333;
     background-size: cover;
     background-position: center;
     position: relative;
@@ -48,7 +48,7 @@ body {
 }
 
 .back {
-    background-image: url('../img/lander.png');
+    background-image: url('../img/back.jpg');
     backface-visibility: hidden;
 }
 
