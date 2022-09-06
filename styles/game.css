@@ -6,7 +6,7 @@ body {
     background-size: cover;
     background-position: center;
     position: relative;
-    background-image: url('../img/background.jpg');
+    background-image: url('../img/body.png');
 }
 
 .grid {
@@ -51,14 +51,14 @@ body {
 .card:hover {
     cursor: pointer;
     box-shadow: none;
-    transform: rotateY(-180deg);
     
 }
 .revelCard{
+    transform: rotateY(-180deg);
 
 }
 /*Monitoramento do game*/
-.display{
+.status{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -71,10 +71,10 @@ body {
     box-shadow: 1px 1px 10px #333;
     /*filter: blur(4px);*/
 }
-.display>span{
+.status>span{
     font-size: 2em;
     font-weight: 500;
-    color: #fff;
+    color: #000;
 }
 .data{
     right: 4%;
@@ -83,17 +83,20 @@ body {
 .navigation{
     right: 4%;
     top: 61%;
+    box-shadow: none;
 }
-
-button{
-    background-color: inherit;
+/*Botões*/
+.btn{
+    background-color: #000;
+    border-radius: 5px;
     font-size: 2em;
     color: #fff;
     padding: 10px;
     margin: 10px;
     cursor: pointer;
+    box-shadow: 1px 1px 10px #000;
 }
-button:hover{
-color: darkred;
-box-shadow: 1px 1px 10px darkred;
+.btn:hover{
+color: #000;
+background-color: #fff;
 }

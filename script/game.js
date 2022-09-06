@@ -33,8 +33,8 @@ const characters = [
   "kawaki",
   "naruto",
   "meiTerumī",
-  "orochimaru",
-  "sarada",
+  "𝐬𝐡𝐢𝐬𝐮𝐢",
+  "himawari",
   "shikamaru",
   "temari",
   "yamato",
@@ -56,3 +56,7 @@ function board() {
 window.onload = () => {
   board();
 };
+
+
+//Interface do jogo
+
