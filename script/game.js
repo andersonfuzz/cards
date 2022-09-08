@@ -18,11 +18,20 @@ function createCard(character) {
 
   return card;
 }
-
+//cartas viradas
+const card01 = ''
+const card02 = ''
 //Revelando cartas
-function revelCard({target}) {
-  console.log(target.parentNode)
+function revelCard({ target }) {
+  if (card01 === '') {
+    card01 = target.parentNode.getAttribute("name")
+  }
+  if (card02 === '') {
+    card02 = target.parentNode.getAttribute("name")
+  }
+
 }
+
 //Criando elemento e adicionando classes
 function createElement(tag, $class) {
   const element = document.createElement(tag);
@@ -38,8 +47,8 @@ const characters = [
   "kawaki",
   "naruto",
   "meiTerumī",
-  "𝐬𝐡𝐢𝐬𝐮𝐢",
-  "himawari",
+  "shisui",
+  "konan",
   "shikamaru",
   "temari",
   "yamato",
@@ -57,9 +66,15 @@ function board() {
     grid.appendChild(avatar);
   });
 }
-
+//Nome do jogador
+function nome() {
+  const name1 = document.querySelector('.name')
+  name1.innerHTML=window.localStorage.getItem('player')
+  
+}
 //Carregando jogo
 window.onload = () => {
+  nome()
   board();
 };
 

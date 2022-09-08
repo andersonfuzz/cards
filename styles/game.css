@@ -6,7 +6,7 @@ body {
     background-size: cover;
     background-position: center;
     position: relative;
-    background-image: url('../img/body.png');
+    /* background-image: url('../img/capa.png'); */
 }
 
 .grid {
@@ -51,9 +51,9 @@ body {
 .card:hover {
     cursor: pointer;
     box-shadow: none;
+    transform: rotateY(-180deg);
 }
 .revelCard{
-    transform: rotateY(-180deg);
 
 }
 /*Monitoramento do game*/

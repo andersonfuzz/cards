@@ -1,5 +1,7 @@
 body{
-    background-image: url('../img/body.png');
+    background-image: url('../img/capa.png');
+    background-position: center;
+    background-size: cover;
 }
 .container {
     height: 100vh;
