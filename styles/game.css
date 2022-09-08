@@ -51,7 +51,6 @@ body {
 .card:hover {
     cursor: pointer;
     box-shadow: none;
-    
 }
 .revelCard{
     transform: rotateY(-180deg);

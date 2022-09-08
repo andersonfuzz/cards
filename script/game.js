@@ -59,4 +59,7 @@ window.onload = () => {
 
 
 //Interface do jogo
-
+const newPlayer=document.querySelector('.newPlayer')
+const restart=document.querySelector('.restart')
+      newPlayer.addEventListener('click',()=>window.location='../index.html')
+      restart.addEventListener('click',()=>window.location.reload(true))
