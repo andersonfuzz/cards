@@ -1,47 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login|</title>
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/index.css">
+    <script defer src="script/index.js"></script>
   </head>
   <body>
-    <h1 class="query">querySelectorAll00</h1>
-    <h1 class="query">querySelectorAll01</h1>
-    <h1 class="query">querySelectorAll02</h1>
-    <h1 class="query">querySelectorAll03</h1>
-    <h1 class="query">querySelectorAll04</h1>
-    <h1 class="query">querySelectorAll05</h1>
-
-    <script>
-      const a = [
-        "Segunda",
-        "Terça",
-        "Quarta",
-        "Quinta",
-        "Sexta",
-        "Sábado",
-        "Domingo",
-      ];
-      
-      //Mix
-      /*const mix = a.sort(() => Math.random() - 0.5);*/
-      const mix = a.sort(() => {Math.random() - 0.5});
-
-      function percorrer() {
-        mix.forEach((item) => {
-          console.log(item)
-        });
-      }
-      const h1=document.querySelectorAll('.query')
-            h1.forEach((item)=>{item.addEventListener('click',()=>{
-                item.style.backgroundColor='red'
-                item.innerHTML='Cliclou!'
-            })})
-      function cor(){
-        alert('asd')
-      }
-    </script>
+   <form class="container">
+    <h1>Memory Game</h1>
+    <input type="text" placeholder="Name">
+    <button disabled>Play</button>
+   </form>
   </body>
 </html>

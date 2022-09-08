@@ -1,0 +1,33 @@
+body{
+    /* background-color: #777; */
+}
+.container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container>h1{
+    font-size: 4em;
+}
+.container>input,button {
+    border-radius: 5px;
+    font-size: 1.5em;
+    width: 25%;
+    max-width: 256px;
+    padding: 10px;
+    margin-top: 10px;
+    box-shadow: 1px 1px 10px #000;
+}
+.container>button{
+    background-color:crimson;
+    color: #fff;
+    cursor: pointer;
+}
+.container>button:disabled{
+    background-color: #555;
+    color: #333;
+    cursor: default;
+}
