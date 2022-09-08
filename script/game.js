@@ -14,10 +14,15 @@ function createCard(character) {
   card.appendChild(back);
 
   card.setAttribute("name", character);
+  card.addEventListener('click', revelCard)
 
   return card;
 }
 
+//Revelando cartas
+function revelCard({target}) {
+  console.log(target.parentNode)
+}
 //Criando elemento e adicionando classes
 function createElement(tag, $class) {
   const element = document.createElement(tag);
@@ -40,6 +45,7 @@ const characters = [
   "yamato",
   "zabuza"
 ];
+
 //Tabuleiro
 function board() {
   //Dobrando cartas com operador 'spread'
@@ -59,7 +65,7 @@ window.onload = () => {
 
 
 //Interface do jogo
-const newPlayer=document.querySelector('.newPlayer')
-const restart=document.querySelector('.restart')
-      newPlayer.addEventListener('click',()=>window.location='../index.html')
-      restart.addEventListener('click',()=>window.location.reload(true))
+const newPlayer = document.querySelector('.newPlayer')
+const restart = document.querySelector('.restart')
+newPlayer.addEventListener('click', () => window.location = '../index.html')
+restart.addEventListener('click', () => window.location.reload(true))
