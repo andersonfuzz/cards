@@ -1,5 +1,5 @@
 body{
-    background-image: url('../img/capa.png');
+    background-image: url('../img/12.jpg');
     background-position: center;
     background-size: cover;
 }
@@ -13,6 +13,8 @@ body{
 
 .container>h1{
     font-size: 4em;
+    color: #fff;
+    /* text-shadow: 1px 1px 1px darkred; */
 }
 .container>input,button {
     border-radius: 5px;
@@ -23,13 +25,17 @@ body{
     margin-top: 10px;
     box-shadow: 1px 1px 10px #000;
 }
+.container>input{
+    background-color: #40131B;
+    color: #fff;
+}
 .container>button{
-    background-color:crimson;
+    background-color: #D91818;
     color: #fff;
     cursor: pointer;
 }
 .container>button:disabled{
-    background-color: #555;
-    color: #333;
+    background-color:#40131B;
+    color: #fff;
     cursor: default;
 }

@@ -6,7 +6,7 @@ body {
     background-size: cover;
     background-position: center;
     position: relative;
-    /* background-image: url('../img/capa.png'); */
+    background-image: url('../img/12.jpg');
 }
 
 .grid {
@@ -51,9 +51,9 @@ body {
 .card:hover {
     cursor: pointer;
     box-shadow: none;
-    transform: rotateY(-180deg);
 }
 .revelCard{
+    transform: rotateY(-180deg);
 
 }
 /*Monitoramento do game*/
@@ -68,12 +68,13 @@ body {
     max-height: 200px;
     position: absolute;
     box-shadow: 1px 1px 10px #333;
+    
     /*filter: blur(4px);*/
 }
 .status>span{
     font-size: 2em;
     font-weight: 500;
-    color: #000;
+    color: #fff;
 }
 .data{
     right: 4%;
@@ -86,7 +87,7 @@ body {
 }
 /*Botões*/
 .btn{
-    background-color: #000;
+    background-color: transparent;
     border-radius: 5px;
     font-size: 2em;
     color: #fff;
@@ -96,6 +97,6 @@ body {
     box-shadow: 1px 1px 10px #000;
 }
 .btn:hover{
-color: #000;
-background-color: #fff;
+color: #fff;
+background-color: #40131B;
 }

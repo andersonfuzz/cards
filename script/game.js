@@ -2,6 +2,10 @@
 //Apontando Grig
 const grid = document.querySelector(".grid");
 
+//Revelando cartas
+const revelCard=({target})=>{
+  target.parentNode.classList.add('revelCard')
+}
 //Criando carta
 function createCard(character) {
   const card = createElement("div", "card");
@@ -16,21 +20,12 @@ function createCard(character) {
   card.setAttribute("name", character);
   card.addEventListener('click', revelCard)
 
+
   return card;
 }
 //cartas viradas
 const card01 = ''
 const card02 = ''
-//Revelando cartas
-function revelCard({ target }) {
-  if (card01 === '') {
-    card01 = target.parentNode.getAttribute("name")
-  }
-  if (card02 === '') {
-    card02 = target.parentNode.getAttribute("name")
-  }
-
-}
 
 //Criando elemento e adicionando classes
 function createElement(tag, $class) {
@@ -47,10 +42,10 @@ const characters = [
   "kawaki",
   "naruto",
   "meiTerumī",
-  "shisui",
+  "kisame",
   "konan",
-  "shikamaru",
-  "temari",
+  "boruto",
+  "madara",
   "yamato",
   "zabuza"
 ];
@@ -66,15 +61,9 @@ function board() {
     grid.appendChild(avatar);
   });
 }
-//Nome do jogador
-function nome() {
-  const name1 = document.querySelector('.name')
-  name1.innerHTML=window.localStorage.getItem('player')
-  
-}
 //Carregando jogo
 window.onload = () => {
-  nome()
+  playerName()
   board();
 };
 
@@ -84,3 +73,9 @@ const newPlayer = document.querySelector('.newPlayer')
 const restart = document.querySelector('.restart')
 newPlayer.addEventListener('click', () => window.location = '../index.html')
 restart.addEventListener('click', () => window.location.reload(true))
+//Nome do jogador
+function playerName() {
+  const name = document.querySelector('.name')
+  name.innerHTML=window.localStorage.getItem('player')
+  
+}
