@@ -26,7 +26,7 @@ body {
     box-shadow: 1px 1px 100px #000;
     position: relative;
     transform-style: preserve-3d;
-    transition: all 2s ease;
+    transition: all 1s ease;
 
 }
 
@@ -36,6 +36,7 @@ body {
     background-position: center;
     background-size: cover;
     position: absolute;
+    transition: all 2s ease;
 }
 
 .front {
@@ -55,6 +56,9 @@ body {
 .revelCard{
     transform: rotateY(-180deg);
 
+}
+.opa{
+    filter: grayscale(100%);
 }
 /*Monitoramento do game*/
 .status{

@@ -1,10 +1,46 @@
 "use strict";
 //Apontando Grig
 const grid = document.querySelector(".grid");
+//cartas viradas
+let card01 = ''
+let card02 = ''
+//verificar
+const checkCard = () => {
+  const cardRevel01 = card01.getAttribute('name')
+  const cardRevel02 = card02.getAttribute('name')
+  if (cardRevel01 === cardRevel02) {
+    card01.firstChild.classList.add('opa')
+    card02.firstChild.classList.add('opa')
+    card01 = ''
+    card02 = ''
+  } else {
 
+    setInterval(()=>{
+
+      card01.classList.remove("revelCard");
+      card02.classList.remove("revelCard");
+      card01 = "";
+      card02 = "";
+
+    },1000)
+
+  }
+
+}
 //Revelando cartas
-const revelCard=({target})=>{
-  target.parentNode.classList.add('revelCard')
+const revelCard = ({ target }) => {
+  if (target.parentNode.classList.contains("revelCard")) {
+    return
+  }
+  if (card01 === '') {
+    target.parentNode.classList.add('revelCard')
+    card01 = target.parentNode
+  } else if (card02 === '') {
+    target.parentNode.classList.add('revelCard')
+    card02 = target.parentNode
+  }
+  
+  checkCard()
 }
 //Criando carta
 function createCard(character) {
@@ -23,9 +59,6 @@ function createCard(character) {
 
   return card;
 }
-//cartas viradas
-const card01 = ''
-const card02 = ''
 
 //Criando elemento e adicionando classes
 function createElement(tag, $class) {
@@ -76,6 +109,6 @@ restart.addEventListener('click', () => window.location.reload(true))
 //Nome do jogador
 function playerName() {
   const name = document.querySelector('.name')
-  name.innerHTML=window.localStorage.getItem('player')
-  
+  name.innerHTML = window.localStorage.getItem('player')
+
 }
