@@ -1,72 +1,5 @@
-"use strict";
 //Apontando Grig
 const grid = document.querySelector(".grid");
-//cartas viradas
-let card01 = ''
-let card02 = ''
-//verificar
-const checkCard = () => {
-  const cardRevel01 = card01.getAttribute('name')
-  const cardRevel02 = card02.getAttribute('name')
-  if (cardRevel01 === cardRevel02) {
-    card01.firstChild.classList.add('opa')
-    card02.firstChild.classList.add('opa')
-    card01 = ''
-    card02 = ''
-  } else {
-
-    setInterval(()=>{
-
-      card01.classList.remove("revelCard");
-      card02.classList.remove("revelCard");
-      card01 = "";
-      card02 = "";
-
-    },1000)
-
-  }
-
-}
-//Revelando cartas
-const revelCard = ({ target }) => {
-  if (target.parentNode.classList.contains("revelCard")) {
-    return
-  }
-  if (card01 === '') {
-    target.parentNode.classList.add('revelCard')
-    card01 = target.parentNode
-  } else if (card02 === '') {
-    target.parentNode.classList.add('revelCard')
-    card02 = target.parentNode
-  }
-  
-  checkCard()
-}
-//Criando carta
-function createCard(character) {
-  const card = createElement("div", "card");
-  const front = createElement("div", "face front");
-  const back = createElement("div", "face back");
-
-  front.style.backgroundImage = `url(../img/${character}.jpg)`;
-
-  card.appendChild(front);
-  card.appendChild(back);
-
-  card.setAttribute("name", character);
-  card.addEventListener('click', revelCard)
-
-
-  return card;
-}
-
-//Criando elemento e adicionando classes
-function createElement(tag, $class) {
-  const element = document.createElement(tag);
-  element.classList = $class;
-  return element;
-}
-
 //Personagens
 const characters = [
   "gaara",
@@ -82,9 +15,71 @@ const characters = [
   "yamato",
   "zabuza"
 ];
+//cartas viradas
+let card01 = ""
+let card02 = ""
+
+//Criando elemento e adicionando classes
+const createElement = (tag, className) => {
+  const element = document.createElement(tag);
+  element.className = className;
+  return element;
+}
+//verificar
+const checkCard = () => {
+  let cardRevel01 = card01.getAttribute('name')
+  let cardRevel02 = card02.getAttribute('name')
+
+  if (cardRevel01 === cardRevel02) {
+    card01.firstChild.classList.add('disabledCard')
+    card02.firstChild.classList.add('disabledCard')
+    card01 = "";
+    card02 = "";
+  } else {
+    setTimeout(() => {
+      card01.classList.remove("revealCard")
+      card02.classList.remove("revealCard")
+      card01 = "";
+      card02 = "";
+    }, 500)
+
+  }
+
+}
+//Revelando cartas
+const revealCard = ({ target }) => {
+  if (target.parentNode.className.includes("revealCard")) {
+    return
+  }
+  if (card01 === '') {
+    target.parentNode.classList.add('revealCard')
+    card01 = target.parentNode
+  } else if (card02 === '') {
+    target.parentNode.classList.add('revealCard')
+    card02 = target.parentNode
+
+    checkCard()
+  }
+
+}
+//Criando Carta
+const createCard = (character) => {
+  const card = createElement("div", "card");
+  const front = createElement("div", "face front");
+  const back = createElement("div", "face back");
+
+  front.style.backgroundImage = `url(../img/${character}.jpg)`;
+
+  card.appendChild(front);
+  card.appendChild(back);
+
+  card.setAttribute("name", character);
+  card.addEventListener('click', revealCard)
+  return card;
+}
 
 //Tabuleiro
-function board() {
+const board = () => {
   //Dobrando cartas com operador 'spread'
   const doubleCharacters = [...characters, ...characters];
   //Embaralhando cartas
@@ -94,21 +89,18 @@ function board() {
     grid.appendChild(avatar);
   });
 }
-//Carregando jogo
-window.onload = () => {
-  playerName()
-  board();
-};
 
+//Botão de recomeçar
+const btnRestart=document.querySelector('.restart')
+      btnRestart.addEventListener('click',()=>location.reload())
 
-//Interface do jogo
-const newPlayer = document.querySelector('.newPlayer')
-const restart = document.querySelector('.restart')
-newPlayer.addEventListener('click', () => window.location = '../index.html')
-restart.addEventListener('click', () => window.location.reload(true))
+//Botão de novo jogador
+const btnNewPlayer=document.querySelector('.newPlayer')
+      btnNewPlayer.addEventListener('click',()=>location='../index.html')
 //Nome do jogador
-function playerName() {
-  const name = document.querySelector('.name')
-  name.innerHTML = window.localStorage.getItem('player')
-
-}
+const spanName=document.querySelector('.name')
+      spanName.innerHTML=localStorage.getItem('player')
+//Tempo de jogo
+const timer=document.querySelector('.name')
+      
+board()

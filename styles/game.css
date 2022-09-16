@@ -3,9 +3,9 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    position: relative;
     background-size: cover;
     background-position: center;
-    position: relative;
     background-image: url('../img/12.jpg');
 }
 
@@ -13,9 +13,7 @@ body {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     width: 100%;
-    height: 100%;
     max-width: 620px;
-    max-height: 550px;
     position: absolute;
 }
 
@@ -26,7 +24,7 @@ body {
     box-shadow: 1px 1px 100px #000;
     position: relative;
     transform-style: preserve-3d;
-    transition: all 2s ease;
+    transition: all 400ms ease;
 
 }
 
@@ -36,11 +34,11 @@ body {
     background-position: center;
     background-size: cover;
     position: absolute;
-    transition: all 2s ease;
+    transition: all 400ms ease;
 }
 
 .front {
-    transform: rotateY(-180deg);
+    transform: rotateY(180deg);
     
 }
 
@@ -49,18 +47,18 @@ body {
     backface-visibility: hidden;
 }
 
+.revealCard{
+    transform: rotateY(180deg);
+    
+}
+.disabledCard{
+    filter: grayscale(100%);
+}
 .card:hover {
     cursor: pointer;
     box-shadow: none;
 }
-.revelCard{
-    transform: rotateY(-180deg);
-
-}
-.opa{
-    filter: grayscale(100%);
-}
-/*Monitoramento do game*/
+/* Monitoramento do game */
 .status{
     display: flex;
     flex-direction: column;
@@ -72,8 +70,6 @@ body {
     max-height: 200px;
     position: absolute;
     box-shadow: 1px 1px 10px #333;
-    
-    /*filter: blur(4px);*/
 }
 .status>span{
     font-size: 2em;
@@ -89,7 +85,7 @@ body {
     top: 61%;
     box-shadow: none;
 }
-/*Botões*/
+/* Botões */
 .btn{
     background-color: transparent;
     border-radius: 5px;
