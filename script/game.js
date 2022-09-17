@@ -100,7 +100,32 @@ const btnNewPlayer=document.querySelector('.newPlayer')
 //Nome do jogador
 const spanName=document.querySelector('.name')
       spanName.innerHTML=localStorage.getItem('player')
-//Tempo de jogo
-const timer=document.querySelector('.name')
       
-board()
+      
+      //Tempo de jogo
+      const hor=document.querySelector('.hor')
+      const min=document.querySelector('.min')
+      const seg=document.querySelector('.seg')
+      let horas=0
+      let minutos=0
+      let segundos=0
+      const cronometro=()=>{
+
+          setInterval(()=>{
+        segundos++
+        if(segundos==60){
+          minutos++
+          segundos=0
+          min.innerHTML=minutos
+        }if(minutos==60){
+            horas++
+            minutos=0
+            hor.innerHTML=horas
+        }
+        seg.innerHTML=segundos
+          },10)
+
+      }
+      board()
+      cronometro()
+      
