@@ -71,7 +71,7 @@ body {
     position: absolute;
     box-shadow: 1px 1px 10px #333;
 }
-.status>span{
+span{
     font-size: 2em;
     font-weight: 500;
     color: #fff;
@@ -84,6 +84,12 @@ body {
     right: 4%;
     top: 61%;
     box-shadow: none;
+}
+
+
+/*Por algum motivo,apenas um span apresentou um comportamento diferente do esperado,tive de reparar isso aqui*/
+.attempts{
+    font-size: 1.2em;
 }
 /* Botões */
 .btn{
@@ -100,3 +106,4 @@ body {
 color: #fff;
 background-color: #40131B;
 }
+

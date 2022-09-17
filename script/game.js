@@ -25,16 +25,20 @@ const createElement = (tag, className) => {
   element.className = className;
   return element;
 }
+
 //verificar
 const checkCard = () => {
+  attempt++
   let cardRevel01 = card01.getAttribute('name')
   let cardRevel02 = card02.getAttribute('name')
-
+  
   if (cardRevel01 === cardRevel02) {
     card01.firstChild.classList.add('disabledCard')
     card02.firstChild.classList.add('disabledCard')
     card01 = "";
     card02 = "";
+    pairRevealed++
+    endGame(pairRevealed)
   } else {
     setTimeout(() => {
       card01.classList.remove("revealCard")
@@ -42,9 +46,28 @@ const checkCard = () => {
       card01 = "";
       card02 = "";
     }, 500)
-
+    
   }
+  attempts(attempt)
+  
+}
 
+//Final de jogo
+let pairRevealed=0
+const endGame=(pairRevealed)=>{
+  if(pairRevealed==12){
+    
+    alert('Jogo finalidazo!')
+  }
+}
+//Tentativas
+let attempt=0
+const attempts=(attempts)=>{
+  if(attempts<10){
+    document.querySelector('.attempts').innerHTML=`0${attempts}`
+
+  }else  document.querySelector('.attempts').innerHTML=attempts
+ 
 }
 //Revelando cartas
 const revealCard = ({ target }) => {
@@ -103,29 +126,37 @@ const spanName=document.querySelector('.name')
       
       
       //Tempo de jogo
-      const hor=document.querySelector('.hor')
+      
+      const hou=document.querySelector('.hor')
       const min=document.querySelector('.min')
-      const seg=document.querySelector('.seg')
-      let horas=0
-      let minutos=0
-      let segundos=0
-      const cronometro=()=>{
+      const sec=document.querySelector('.seg')
+      let hour=0
+      let minutes=0
+      let second=0
+      const stopwatch=()=>{
 
-          setInterval(()=>{
-        segundos++
-        if(segundos==60){
-          minutos++
-          segundos=0
-          min.innerHTML=minutos
-        }if(minutos==60){
-            horas++
-            minutos=0
-            hor.innerHTML=horas
-        }
-        seg.innerHTML=segundos
-          },10)
+          const setIn=setInterval(()=>{
+            second++
+        if(second==60){
+          minutes++
+          second=0
+          if(minutes<10){
+            min.innerHTML=`0${minutes}`
+          }else min.innerHTML=minutes
+          
+        }if(minutes==60){
+          hour++
+          minutes=0
+          if(hour<10){
+            hou.innerHTML=`0${hour}`
+          }else hou.innerHTML=hour
+            
+        }if(second<10){
+          sec.innerHTML=`0${second}`
+        }else sec.innerHTML=second
+          },1000)
 
       }
       board()
-      cronometro()
+      stopwatch()
       

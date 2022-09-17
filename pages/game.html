@@ -1,26 +1,27 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Game|</title>
-    <link rel="stylesheet" href="../styles/reset.css" />
-    <link rel="stylesheet" href="../styles/game.css" />
-    <link rel="shortcut icon" href="../img/computer.png" type="image/x-icon">
-    <script defer src="../script/game.js"></script>
-  </head>
-  <style>
-    span{
-      font-size: 3em;
-      color: #fff;
-    }
-  </style>
-  <body>
-    <main class="grid"></main>
-    <article class="status data">
-      <span class="name"></span>
-      <span>Tentativas:00</span>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Game|</title>
+  <link rel="stylesheet" href="../styles/reset.css" />
+  <link rel="stylesheet" href="../styles/game.css" />
+  <link rel="shortcut icon" href="../img/computer.png" type="image/x-icon">
+  <script defer src="../script/game.js"></script>
+</head>
+
+<body>
+  <main class="grid"></main>
+
+  <article class="status data">
+    <span class="name"></span>
+
+    <span>Tentativas:
+      <span class="attempts">00</span>
+    </span>
+
     <div class="cro">
       <span class="hor">00</span>
       <span>:</span>
@@ -28,10 +29,12 @@
       <span>:</span>
       <span class="seg">00</span>
     </div>
-    </article>
-    <article class="status navigation">
-      <button class="btn newPlayer">New Player</button>
-      <button class="btn restart">Restart</button>
-    </article>
-  </body>
+
+  </article>
+  <article class="status navigation">
+    <button class="btn newPlayer">New Player</button>
+    <button class="btn restart">Restart</button>
+  </article>
+</body>
+
 </html>
