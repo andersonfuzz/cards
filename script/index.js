@@ -1,20 +1,20 @@
 "use strict";
 const input = document.querySelector('input')
 const button = document.querySelector('button')
-const form=document.querySelector('.container')
+const form = document.querySelector('.container')
 const validateImput = ({ target }) => {
-    if (target.value.length > 2) {
+    if (target.value.length >= 3 && target.value.length <= 10) {
         button.removeAttribute('disabled')
         return
     }
     button.setAttribute('disabled', '')
 }
 
-const submit=(event)=>{
+const submit = (event) => {
     event.preventDefault()
-    localStorage.setItem('player',input.value)
-    window.location='pages/game.html'
+    localStorage.setItem('player', input.value)
+    window.location = 'pages/game.html'
 }
 
 input.addEventListener('input', validateImput)
-form.addEventListener('submit',submit)
+form.addEventListener('submit', submit)
