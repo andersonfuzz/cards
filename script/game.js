@@ -135,7 +135,7 @@ const stopwatch = () => {
     } if (second < 10) {
       sec.innerHTML = `0${second}`
     } else sec.innerHTML = second
-  }, 100)
+  }, 1000)
 }
 const initi=()=>{board(),stopwatch()}
 
